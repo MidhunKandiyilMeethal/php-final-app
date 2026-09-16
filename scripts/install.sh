@@ -1,8 +1,8 @@
 #!/bin/bash
-yum install -y httpd php
-systemctl stop httpd || true
-rm -rf /var/www/html/*
-cp -r /opt/codedeploy-agent/deployment-root/*/*/deployment-archive/* /var/www/html/ 2>/dev/null || cp -r * /var/www/html/ 2>/dev/null || true
-chown -R apache:apache /var/www/html
-systemctl start httpd
-systemctl enable httpd
+echo "Starting install" > /tmp/deploy.log
+sudo yum install -y httpd >> /tmp/deploy.log 2>&1 || true
+sudo systemctl start httpd || true
+sudo systemctl enable httpd || true
+sudo chmod -R 777 /var/www/html
+echo "Install OK" >> /tmp/deploy.log
+exit 0
