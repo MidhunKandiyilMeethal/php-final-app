@@ -1,3 +1,2 @@
 #!/bin/bash
-yum install -y httpd php || true
-exit 0
+rm -rf /var/www/html/*
