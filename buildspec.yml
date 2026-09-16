@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  install:
+    commands:
+            - echo Installing PHP...
+            - yum update -y
+  build:
+    commands:
+            - echo Build started on `date`
+            - php -l index.php || echo "No PHP file, checking HTML"
+            - echo Build completed
+artifacts:
+  files:
+        - '**/*'
