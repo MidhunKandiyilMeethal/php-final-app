@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-    - source: /MidhunKandiyilMeethal-php-final-app-c06f081
+    - source: /
     destination: /var/www/html
     overwrite: true
 hooks:
